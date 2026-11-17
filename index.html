@@ -622,6 +622,179 @@ body {
   color: var(--text-muted);
 }
 
+/* "Rak HaBanim" Group Quote & Poll Simulator */
+.banter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.banter-chip {
+  appearance: none;
+  border: 1px solid var(--border-light);
+  background: var(--bg-page);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.38rem 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease, border-color 0.14s ease, transform 0.1s ease;
+}
+
+.banter-chip:active {
+  transform: scale(0.96);
+}
+
+.banter-chip.is-active {
+  background: var(--bg-hero);
+  color: var(--text-on-dark);
+  border-color: var(--bg-hero);
+}
+
+.banter-stage {
+  background: hsl(37, 26%, 93%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 132px;
+  transition: opacity 0.15s ease;
+}
+
+.banter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.1rem;
+}
+
+.banter-sender {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--accent-bronze-hover);
+}
+
+.banter-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.12rem 0.52rem;
+  border-radius: 999px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.banter-badge.bench {
+  background: var(--accent-amber-bg);
+  color: var(--accent-amber-text);
+  border-color: transparent;
+}
+
+.banter-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+
+.banter-bubble {
+  background: var(--bg-surface);
+  border-radius: 12px 3px 12px 12px;
+  padding: 0.62rem 0.8rem;
+  box-shadow: 0 1px 3px hsla(218, 28%, 12%, 0.06);
+  border: 1px solid hsla(36, 20%, 82%, 0.7);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.banter-bubble.deleted {
+  font-style: italic;
+  color: var(--text-muted);
+  background: hsla(38, 25%, 97%, 0.7);
+}
+
+.banter-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin-top: 0.28rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.banter-edited {
+  font-family: var(--font-sans);
+}
+
+.banter-poll {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+
+.banter-poll-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent-pine);
+  letter-spacing: 0.02em;
+}
+
+.banter-poll-opt {
+  appearance: none;
+  width: 100%;
+  text-align: right;
+  background: var(--bg-page);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.banter-poll-opt.voted {
+  border-color: var(--accent-bronze);
+  background: var(--accent-gold-soft);
+  font-weight: 600;
+}
+
+.banter-poll-votes {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.banter-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.banter-actions .btn-primary {
+  flex: 1 1 180px;
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+}
+
 /* Toast Notification */
 .toast {
   position: fixed;
@@ -703,7 +876,7 @@ body {
 </svg>
     <div class="hero-scrim"></div>
     <div class="hero-inner">
-      <p class="hero-eyebrow">18–22 בנובמבר 2026 • דן, תומר, אסף ולירן</p>
+      <p class="hero-eyebrow">18–22 בנובמבר 2026 • דן, תומר, אסף ולירן (וחגי ואלרועי מהיציע בארץ)</p>
       <h1 class="hero-title">בודפשט — מסע החורף</h1>
       <p class="hero-subtitle">חמישה ימים של מרחצאות חמים, קולינריה, ספא אירופאי קלאסי ולילות חורף בבודפשט.</p>
 
@@ -729,6 +902,7 @@ body {
   <nav class="section-nav" aria-label="ניווט מהיר בעמוד">
     <div class="section-nav-inner">
       <a class="nav-link active" href="#itinerary-section" id="nav-itinerary">הלו״ז היומי</a>
+      <a class="nav-link" href="#banter-section" id="nav-banter">מחולל ״רק הבנים״</a>
       <a class="nav-link" href="#converter-section" id="nav-converter">מחשבון פורינט</a>
       <a class="nav-link" href="#expenses-section" id="nav-expenses">חלוקת הוצאות</a>
       <a class="nav-link" href="#tips-section" id="nav-tips">דגשים וציוד</a>
@@ -751,6 +925,25 @@ body {
       </div>
 
       <div id="timeline-list" class="timeline"></div>
+    </section>
+
+    <!-- "Rak HaBanim" Group Quote & Poll Generator -->
+    <section id="banter-section" aria-labelledby="banter-heading">
+      <div class="section-header">
+        <h2 id="banter-heading" class="section-title">מחולל ״רק הבנים״ — מי אמר מה?</h2>
+        <p class="section-desc">מבוסס על 10 שנות היסטוריה בקבוצה (כולל נציגינו שנשארו בארץ). בחרו דמות או הגרילו מה יישלח בקבוצה בבודפשט:</p>
+      </div>
+
+      <div class="panel">
+        <div id="banter-chips" class="banter-chips" role="tablist" aria-label="סינון לפי חבר קבוצה"></div>
+
+        <div id="banter-stage" class="banter-stage" aria-live="polite"></div>
+
+        <div class="banter-actions">
+          <button id="next-banter-btn" type="button" class="btn btn-primary">🎲 הגרל משפט הבא</button>
+          <button id="copy-banter-btn" type="button" class="btn">שלח ציטוט לוואטסאפ</button>
+        </div>
+      </div>
     </section>
 
     <!-- Live Currency & Split Calculator -->
@@ -779,7 +972,7 @@ body {
         <div class="split-summary">
           <div id="per-person-display" class="per-person-readout"></div>
         </div>
-        <p class="tip-note">* שער ייחוס משוער: €1 ≈ 385 פורינט ≈ ₪3.92. שימו לב שברוב המסעדות בבודפשט דמי שירות (12%–15%) כבר כלולים בחשבון.</p>
+        <p class="tip-note">* שער ייחוס משוער: €1 ≈ 385 פורינט ≈ ₪3.92. ברוב המסעדות דמי שירות (12%–15%) כבר כלולים בחשבון (ובמחשבון כאן, לבקשת אלרועי, החשבנו גם את הבירות, הצ׳יפס וההרפיד).</p>
       </div>
     </section>
 
@@ -794,7 +987,7 @@ body {
         <form id="expense-form" class="expense-form">
           <div class="field full-mobile">
             <label class="field-label" for="exp-desc">על מה שולם?</label>
-            <input id="exp-desc" class="field-input text-mode" type="text" placeholder="למשל: מונית Bolt / דרינקים" required />
+            <input id="exp-desc" class="field-input text-mode" type="text" placeholder="למשל: מונית Bolt / בירות, צ׳יפס והרפיד" required />
           </div>
           <div class="field">
             <label class="field-label" for="exp-amount">סכום</label>
@@ -841,7 +1034,7 @@ body {
   </main>
 
   <footer class="footer">
-    בודפשט 2026 • חופשה מהנה! 🇭🇺
+    רק הבנים • בודפשט 18–22.11.2026 🇭🇺
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -869,7 +1062,7 @@ const ITINERARY = [
         tag: 'טיסה W6 2328',
         highlight: false,
         title: 'נחיתה בשדה התעופה בודפשט (BUD) והסעה למלון',
-        desc: 'נחיתה בטרמינל 2B עם טרולי בלבד. מעבר ביקורת דרכונים (מערכת EES ביומטרית) ואיסוף בהסעה פרטית שהוזמנה מראש ישירות למלון.',
+        desc: 'נחיתה בטרמינל 2B עם טרולי בלבד (לירן — בלי 30 ק״ג מזוודה הפעם) ומקום לרגליים של אוליגרכים ב-12 אירו. מעבר ביקורת דרכונים (מערכת EES ביומטרית) ואיסוף בהסעה פרטית שהוזמנה מראש ישירות למלון.',
         mapQuery: 'Budapest Ferenc Liszt International Airport Terminal 2B',
         copyAddr: null
       },
@@ -878,7 +1071,7 @@ const ITINERARY = [
         tag: 'צ׳ק-אין',
         highlight: false,
         title: 'Corinthia Budapest 5★ ודרינק פתיחה',
-        desc: 'קבלת שני החדרים הצמודים (Twin) ודרינק ראשון של לילה ב-Le Bar שבלובי המלון.',
+        desc: 'קבלת שני החדרים הצמודים (Twin) ודרינק ראשון של לילה ב-Le Bar שבלובי המלון (ותמונה ראשונה בקבוצה להוציא לחגי ולאלרועי את העיניים).',
         mapQuery: 'Corinthia Budapest Erzsébet körút 43-49',
         copyAddr: 'Corinthia Budapest, Erzsébet körút 43-49, 1073'
       }
@@ -896,7 +1089,7 @@ const ITINERARY = [
         tag: 'חובה כפכפים!',
         highlight: true,
         title: 'מרחצאות סצ׳ני (Széchenyi Thermal Bath)',
-        desc: 'בריכות תרמיות חיצוניות ב-38°C באוויר החורפי, סאונות ובר במים (כרטיסי Cabin עם תא פרטי). להביא כפכפים מהבית ומגבת קלה — את חלוקי המלון משאירים בחדר.',
+        desc: 'בריכות תרמיות חיצוניות ב-38°C באוויר החורפי, סאונות ובר במים (כרטיסי Cabin עם תא פרטי). להביא כפכפים מהבית ומגבת קלה — את חלוקי המלון (ואת שק הפחמים של תומר) משאירים בחדר.',
         mapQuery: 'Széchenyi Thermal Bath Budapest',
         copyAddr: 'Széchenyi Gyógyfürdő, Állatkerti krt. 9-11'
       },
@@ -905,7 +1098,7 @@ const ITINERARY = [
         tag: 'כשר בשרי',
         highlight: false,
         title: 'ארוחת צהריים ב-Nitavalo (נתאווה לו)',
-        desc: 'אוכל רחוב-שף בשרי כשר למהדרין בלב הרובע היהודי. משובץ בחמישי בצהריים מאחר שהמקום סגור בימי שישי.',
+        desc: 'אוכל רחוב-שף בשרי כשר למהדרין בלב הרובע היהודי — שדרוג רציני לעומת צדוק בבוקרשט (רק שאסי לא יצלם את המנות בזווית של שיפודייה). משובץ בחמישי כי סגור בשישי.',
         mapQuery: 'Nitavalo Dob utca 32 Budapest',
         copyAddr: 'Dob utca 32, 1072 Budapest'
       },
@@ -923,7 +1116,7 @@ const ITINERARY = [
         tag: 'מוזמן • מישלן ★',
         highlight: true,
         title: 'ארוחת טעימות במסעדת השף Salt Budapest',
-        desc: 'כוכב מישלן + כוכב ירוק במלון הבוטיק Rum. תפריט עונתי מבוסס ליקוט והתססות (כולל תפריט טבעוני מלא בתיאום מראש). אופציה לדרינק המשך ב-Boutiq’Bar.',
+        desc: 'כוכב מישלן + כוכב ירוק במלון הבוטיק Rum. תפריטים מותאמים מראש (טבעוני / צמחוני ודגים כשרים — תומר, נבדק: בלי כריש, בלי צב ובלי חתול ים; ולמי שפורש "בחפץ לב" — "חנה ושבעת בנותיה" במרחק 6 דק׳ הליכה).',
         mapQuery: 'Salt Budapest Királyi Pál utca 4',
         copyAddr: 'Királyi Pál utca 4, 1053 Budapest'
       }
@@ -1022,7 +1215,7 @@ const ITINERARY = [
         tag: 'חיי לילה',
         highlight: false,
         title: 'סיבוב ב-Szimpla Kert ודרינק סגירה',
-        desc: 'הצצה לבר החורבות המפורסם בעולם (7 דק׳ הליכה מהמלון), המשך לקוקטיילים או נשנוש מוצ״ש חם ב-Nitavalo (פתוח עד 22:00).',
+        desc: 'הצצה לבר החורבות המפורסם בעולם ב-21:30 בדיוק (כמו ג׳מס פתח תקווה, רק בלי "תירוץ של אלרועי"), המשך לקוקטיילים או נשנוש מוצ״ש ב-Nitavalo (פתוח עד 22:00).',
         mapQuery: 'Szimpla Kert Kazinczy utca 14 Budapest',
         copyAddr: 'Kazinczy utca 14, 1075 Budapest'
       }
@@ -1059,10 +1252,12 @@ const ITINERARY = [
 
 const CHECKLIST_ITEMS = [
   { id: 'flipflops', text: 'להכניס לטרולי כפכפי גומי / בריכה — חובה מוחלטת בסצ׳ני (קנייה במקום עולה 4,200 פורינט).' },
-  { id: 'bolt', text: 'להוריד אפליקציית Bolt למוניות — ל-4 חברים נסיעה בעיר יוצאת כ-6–10 אירו סה״כ עד הפתח.' },
+  { id: 'bolt', text: 'להוריד אפליקציית Bolt למוניות — ל-4 חברים נסיעה בעיר יוצאת כ-6–10 אירו סה״כ עד הפתח (לירן, לא צריך לארגן מסוק סיני חשמלי).' },
   { id: 'bkk', text: 'חשוב בתחב״צ: אין תשלום באשראי ישיר בחשמליות 4/6! אם עולים על תחב״צ, קונים באפליקציית BudapestGO כרטיס Group 24h לכולם ב-5,000 פורינט.' },
   { id: 'cashless', text: 'בשוק חג המולד בבזיליקה כמעט כל הדוכנים עובדים ללא מזומן (כרטיס אשראי / Apple Pay / Google Pay בלבד).' },
-  { id: 'tip', text: 'טיפ במסעדות: ברוב המקומות בבודפשט כבר מתווסף לחשבון דמי שירות (Szervizdíj של 12%–15%) — לבדוק בחשבונית לפני שמוסיפים פעמיים.' }
+  { id: 'tip', text: 'טיפ במסעדות: ברוב המקומות בבודפשט כבר מתווסף לחשבון דמי שירות (Szervizdíj של 12%–15%) — לבדוק בחשבונית לפני שמוסיפים פעמיים.' },
+  { id: 'no_deploy', text: 'נוהל חמישי של אסי: "1,000 פעם אני מבקש — לא לעשות דיפלויימנט בחמישי!" (פיני, מיילים ועבודה עוברים להשתק עד יום ראשון בע״ה).' },
+  { id: 'group_fomo', text: 'נוהל הוצאת עיניים: כל תמונה מהספא ומהדנובה עולה ישר ל"רק הבנים" לטובת חגי (ששינה את שם הקבוצה לתאריכים שלנו ונשאר בארץ) ואלרועי בכנס Soho.' }
 ];
 
 const STORAGE_EXPENSES = 'bp2026_expenses_v1';
@@ -1405,8 +1600,467 @@ function initChecklist() {
   draw();
 }
 
+/* "Rak HaBanim" Group Quote & Poll Simulator */
+const BANTER_CHARACTERS = [
+  { id: 'all', chip: '🎲 כולם' },
+  { id: 'asi', chip: 'אסי', fullName: 'אסי כרומוזום מיותר', badge: 'טס לבודפשט ✈️', bench: false },
+  { id: 'dan', chip: 'דן', fullName: 'Dan (מלך הנוסעים המתמידים)', badge: 'אדריכל הטיול ✈️', bench: false },
+  { id: 'tomer', chip: 'תומר', fullName: 'תומר מלך החצרנים', badge: 'טס לבודפשט ✈️', bench: false },
+  { id: 'liran', chip: 'לירן', fullName: 'לירן (שם בדוי)', badge: 'טס לבודפשט ✈️', bench: false },
+  { id: 'hagai', chip: 'חגי 🏠', fullName: 'חגי מגידו', badge: 'נציג היציע בארץ 🏠', bench: true },
+  { id: 'elroee', chip: 'אלרועי 🏠', fullName: 'אלרועי אוכל הצפרדעים', badge: 'בכנס Soho בארץ 🏠', bench: true }
+];
+
+const BANTER_ITEMS = [
+  // אסי כרומוזום מיותר
+  {
+    who: 'asi',
+    time: '11:55',
+    bubbles: [
+      'יאללה דן תזמין את הספינה בדנובה. אני לא צריך חימום',
+      'סליחה',
+      'אני רוצה את החימום. תדפוק את תומר על הסיפון בחוץ'
+    ]
+  },
+  {
+    who: 'asi',
+    time: '12:24',
+    bubbles: [
+      '1000 פעם אני מבקש. לא לעשות דיפלויימנט בחמישי!!!',
+      'את האמת המים פה בסצ׳ני מרגישים לי סייבר',
+      'לא אתפלא אם המניה של הונגריה תתרסק בשני'
+    ]
+  },
+  {
+    who: 'asi',
+    time: '20:05',
+    bubbles: [
+      'לירן מתפללים היום?',
+      'לירן לאסוף אותך מהחדר הצמוד?',
+      'טוב דן נראה לי צריך לחזל״ש את הערב, לירן מסנן אותי מהמיטה ליד'
+    ]
+  },
+  {
+    who: 'asi',
+    time: '20:55',
+    bubbles: [
+      'דן אני אשמח לצב במישלן. אבל בינינו — צדוק הרומני בבוקרשט היה יותר יקר מהמישלן הזה...'
+    ]
+  },
+  {
+    who: 'asi',
+    time: '18:02',
+    bubbles: [
+      'תומר תביא את השק של הפחמים איתנו לבודפשט, ותומר אני שונא אוצך שבגללך קפץ המחיר בוויז'
+    ]
+  },
+  {
+    who: 'asi',
+    time: '23:18',
+    bubbles: ['דן הלילה זה הלילה? מה נחום אומר?'],
+    poll: {
+      question: '📊 סקר: הלילה זה מחר של אתמול?',
+      options: [
+        { label: 'הלילה זה הלילה', votes: 1 },
+        { label: 'טראמפ נותן עוד שבוע', votes: 3 },
+        { label: 'אני חגי', votes: 0 }
+      ]
+    }
+  },
+  {
+    who: 'asi',
+    time: '23:08',
+    bubbles: [
+      'לירו מחר קפה בוקר בלובי? רק תגיד לי מראש אם הארוחת טעימות ארוככככה כמו סרט בקולנוע — שלושה זקנים בגילנו אני נרדם בשליש הראשון'
+    ]
+  },
+
+  // דן (Dan)
+  {
+    who: 'dan',
+    time: '11:38',
+    bubbles: ['טוב חברים, המחיר קפץ מאז אתמול. שמתי סקר דמוקרטי:'],
+    poll: {
+      question: '📊 סקר: סוגרים אטרקציה בבודפשט',
+      options: [
+        { label: 'מאשר', votes: 4 },
+        { label: 'מאשר כמובן', votes: 4 }
+      ]
+    }
+  },
+  {
+    who: 'dan',
+    time: '11:44',
+    bubbles: [
+      'תומר שאל אם יש חלופות זולות יותר לקורינתיה 5 כוכבים. בדקתי — כן, מלון באשדוד או באזור אשקלון.'
+    ]
+  },
+  {
+    who: 'dan',
+    time: '11:57',
+    bubbles: [
+      '@תומר מלך החצרנים מקום לרגליים ב-12 יורו לכיוון? פרגנתי לך, תרגיש כמו אוליגרך. ולא לשכוח שיש לי Wizz Priority.'
+    ]
+  },
+  {
+    who: 'dan',
+    time: '21:54',
+    bubbles: [
+      'רק בקשה אחת למסעדת מישלן בחמישי: שאסי לא יצלם את המנות. מסכנות המנות, בתמונות שלו הכול נראה כמו מסעדת צדוק בוקרשט.'
+    ]
+  },
+  {
+    who: 'dan',
+    time: '22:27',
+    bubbles: [
+      'כל תמונה מהספא לשלוח אך ורק בקבוצה ולא בפרטי — נטו כדי להוציא את העיניים לחגי ולאלרועי שנשארו בארץ פראיירים.'
+    ]
+  },
+  {
+    who: 'dan',
+    time: '19:58',
+    bubbles: ['יוצאים לדרינק ב-Szimpla Kert בתשע וחצי בדיוק:'],
+    poll: {
+      question: '📊 סקר: ישיבת לילה ב-21:30',
+      options: [
+        { label: 'מגיע', votes: 4 },
+        { label: 'תירוץ של אלרועי', votes: 1 }
+      ]
+    }
+  },
+
+  // תומר מלך החצרנים
+  {
+    who: 'tomer',
+    time: '18:01',
+    edited: true,
+    bubbles: [
+      'מישהו צריך שק של פחמים לפני שיוצאים לנתב״ג?'
+    ]
+  },
+  {
+    who: 'tomer',
+    time: '22:07',
+    edited: true,
+    bubbles: [
+      'דן ואסי, העלות והזמן קצת ארוכים בשבילי — אתם תלכו למישלן ותהנו שם, בחפץ לב. הכל בסדר, לירן ואני נלך למסעדה אחרת בע״ה 👍'
+    ]
+  },
+  {
+    who: 'tomer',
+    time: '20:11',
+    edited: true,
+    bubbles: [
+      'רק מוודא לגבי התפריט בחמישי — שלא יביאו לי כריש, צב או דגים לא כשרים ברמה מוגזמת כמו חתול ים...'
+    ]
+  },
+  {
+    who: 'tomer',
+    time: '08:49',
+    edited: true,
+    bubbles: [
+      'וידאתי מול פיני שלא יעשה לי פוזות בגלל התאריכים של שורק — יש אישור לחופש בע״ה 👍 דן, הבקשת תשלום שולם!'
+    ]
+  },
+  {
+    who: 'tomer',
+    time: '12:12',
+    edited: true,
+    bubbles: [
+      'תשמעו, בפורינטים זה פער. ראיתי שאנשים אומרים שהם עושים מניפולציות על החיפושים אם נכנסים מאותו מחשב.'
+    ]
+  },
+  {
+    who: 'tomer',
+    time: '19:30',
+    edited: true,
+    bubbles: [
+      'איפה ומתי נפגשים בלובי? תגידו לי לכמה להזמין שולחן למוצ״ש, בודק וזורם איתכם.'
+    ]
+  },
+
+  // לירן (שם בדוי)
+  {
+    who: 'liran',
+    time: '11:26',
+    bubbles: [
+      'פתחתי GEM מדריך טיולים לבודפשט ב-Gemini, מוזמנים להשתמש. ואגב אם מישהו מחפש מלונות יוקרה של ישרוטל יש היום מבצע של 20–30 אחוז הנחה.'
+    ]
+  },
+  {
+    who: 'liran',
+    time: '22:18',
+    bubbles: [
+      'בזמן שאתם אוכלים עשבים מותססים ב-Salt, אני ותומר נלך לאכול בחנה ושבעת בנותיה.'
+    ]
+  },
+  {
+    who: 'liran',
+    time: '11:02',
+    bubbles: [
+      'תומר, תארגן להם מסוק סיני חשמלי מהשדה למלון, חבל על הדלק.'
+    ]
+  },
+  {
+    who: 'liran',
+    time: '12:10',
+    bubbles: [
+      'אני משער שהמחיר בוויז עלה כי דן נכנס ויצא מהמשתמש שלו — האלגוריתם שלהם יודע שהוא חם. אין מה לעשות, דן הוא המלך של הנוסעים המתמידים.'
+    ]
+  },
+  {
+    who: 'liran',
+    time: '20:07',
+    bubbles: [
+      'ברור שמגיע. תנו לי רק לארגן את כולם ואני מוכן (הנס האמיתי של הטיול זה שדחסתי את ה-30 קילו מזוודה הקבועים שלי לתוך טרולי).'
+    ]
+  },
+  {
+    who: 'liran',
+    time: '08:46',
+    bubbles: [
+      'שלום לירן כהן, חידת בוקר מהדנובה: תסתכלו טוב על התמונה של הפרלמנט ותגידו מה לא בסדר בתמונה (רמז: הצל של המטוס).'
+    ]
+  },
+
+  // חגי מגידו (נשאר בארץ)
+  {
+    who: 'hagai',
+    time: '08:28',
+    bubbles: [
+      'רק מזכיר לכם שאני הקמתי את "רק הבנים" ב-2016 ואני אפילו שיניתי לקבוצה את השם ל-18-22.11.26 (אחרי שבטעות רשמתי דצמבר) ובסוף אתם טסים בלעדיי. מתי מנגל פיצוי אצל דן??'
+    ]
+  },
+  {
+    who: 'hagai',
+    time: '21:58',
+    bubbles: [
+      'תזמינו לי מהשוק בבודפשט עראיס + זירו + נישנןש נקנקיות. על הבוקר הןלך לי הגיר והיצי צריך לעשות חידןש טסט בתחילת חןדש.'
+    ]
+  },
+  {
+    who: 'hagai',
+    time: '14:43',
+    bubbles: [
+      'תומר, לירן אמר לי עכשיו בטלפון שלא נעים לו להגיד לדן אבל הוא ממש רוצה שתבוא איתו למסעדת חנה',
+      'למרות שממש ביקשת לא להןציא את זה החוצה'
+    ]
+  },
+  {
+    who: 'hagai',
+    time: '09:47',
+    bubbles: [
+      'בזמן שאתם בספא אני מתלבט בין ג׳יפ לבין ג׳אקו. יש לי מחירים ממש טובים איתם אם עוד לא עשיתם רכישה בבודפשט.'
+    ]
+  },
+  {
+    who: 'hagai',
+    time: '20:43',
+    bubbles: [
+      'שד ולירוי תקשיבו רגע סקופ מטורף אבל בבקשה לא להןציא את זה החוצה:',
+      { text: '🚫 הודעה זו נמחקה', deleted: true }
+    ]
+  },
+  {
+    who: 'hagai',
+    time: '16:10',
+    bubbles: [
+      'שלחו תמונה מהסצ׳ני — בואנה אני חוגג 15 קילו פחות מהתמונה האחרונה שלנו מבוקרשט! מתי יוצאים??? היום??? ב-21:00?????'
+    ]
+  },
+
+  // אלרועי אוכל הצפרדעים (נשאר בארץ)
+  {
+    who: 'elroee',
+    time: '09:45',
+    bubbles: [
+      'אני בכנס Soho בחמישי, והסופ״ש בבודפשט פחות רלוונטי עדיין כרגע 🤷‍♂️ נראה אש, תהנו המון 🙏😊'
+    ]
+  },
+  {
+    who: 'elroee',
+    time: '08:42',
+    bubbles: [
+      'דן, בדקתי את החשבון פה באתר — החשבת את הבירות? את הצ׳יפס? את ההרפיד? נו אתה רואה, מצאנו את ההפרש, אולי אפילו צריך לעשות לך הוראת קבע למנגלים.'
+    ]
+  },
+  {
+    who: 'elroee',
+    time: '21:42',
+    bubbles: [
+      'המאמן בג׳יוג׳יטסו של אלוני אמר שיש סיכוי למשהו שבוע הבא 🙄 והקטע שהוא מקושר ויודע — נראה אתכם מתווכחים איתו, יקפל אתכם בזוויות שלא ידעתם שאפשריות.'
+    ]
+  },
+  {
+    who: 'elroee',
+    time: '19:34',
+    bubbles: [
+      'עברו רבעון שני לתזרים שלילי, ומגייסים עוד כסף כדי להשקיע ב-AI',
+      'שני ברצף עם תזרים שלילי* — זה בדוק כי הם משקיעים במשחקי AI של לירן.'
+    ]
+  },
+  {
+    who: 'elroee',
+    time: '14:53',
+    bubbles: [
+      'וואי זה מוזר, מאז אתמול בצהריים אני מקבל בפוש לטלפון תקציר של ההודעות שלכם מבודפשט במסך התראות, אבל המייל עצמו לא מצליח לטעון אותן.'
+    ]
+  },
+  {
+    who: 'elroee',
+    time: '11:51',
+    bubbles: [
+      'דווקא אצל אסי יותר הגיוני לעשות דיפלויימנט בשישי לפני כניסת שבת בבודפשט — ואז אם נתקע, זה על הסופ״ש של כל העולם 😇😜'
+    ]
+  }
+];
+
+function initBanterGenerator() {
+  const chipsEl = document.getElementById('banter-chips');
+  const stageEl = document.getElementById('banter-stage');
+  const nextBtn = document.getElementById('next-banter-btn');
+  const copyBtn = document.getElementById('copy-banter-btn');
+  if (!chipsEl || !stageEl) return;
+
+  let activeFilter = 'all';
+  const decks = {};
+  let currentItem = null;
+
+  function getPool(filterId) {
+    return filterId === 'all'
+      ? BANTER_ITEMS.slice()
+      : BANTER_ITEMS.filter(it => it.who === filterId);
+  }
+
+  function nextFromDeck(filterId) {
+    if (!decks[filterId] || decks[filterId].length === 0) {
+      const pool = getPool(filterId);
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = pool[i];
+        pool[i] = pool[j];
+        pool[j] = tmp;
+      }
+      if (currentItem && pool.length > 1 && pool[0] === currentItem) {
+        pool.push(pool.shift());
+      }
+      decks[filterId] = pool;
+    }
+    return decks[filterId].shift();
+  }
+
+  function renderChips() {
+    chipsEl.innerHTML = '';
+    BANTER_CHARACTERS.forEach(ch => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'banter-chip' + (ch.id === activeFilter ? ' is-active' : '');
+      btn.textContent = ch.chip;
+      btn.addEventListener('click', () => {
+        activeFilter = ch.id;
+        renderChips();
+        showNext();
+      });
+      chipsEl.appendChild(btn);
+    });
+  }
+
+  function renderStage(item) {
+    currentItem = item;
+    const person = BANTER_CHARACTERS.find(c => c.id === item.who) || BANTER_CHARACTERS[1];
+
+    let bubblesHtml = '';
+    item.bubbles.forEach((b, idx) => {
+      const isObj = typeof b === 'object';
+      const txt = isObj ? b.text : b;
+      const isDeleted = isObj && b.deleted;
+      const isLast = idx === item.bubbles.length - 1 && !item.poll;
+      bubblesHtml += `
+        <div class="banter-bubble ${isDeleted ? 'deleted' : ''}">
+          <div>${txt}</div>
+          ${isLast ? `<div class="banter-meta">${item.edited ? '<span class="banter-edited">נערך •</span>' : ''}<span>${item.time} ✓✓</span></div>` : ''}
+        </div>
+      `;
+    });
+
+    if (item.poll) {
+      let optsHtml = '';
+      item.poll.options.forEach((opt, idx) => {
+        optsHtml += `
+          <button type="button" class="banter-poll-opt" data-opt-idx="${idx}">
+            <span>${opt.label}</span>
+            <span class="banter-poll-votes">${opt.votes} הצבעות</span>
+          </button>
+        `;
+      });
+      bubblesHtml += `
+        <div class="banter-bubble">
+          <div class="banter-poll">
+            <div class="banter-poll-title">${item.poll.question}</div>
+            ${optsHtml}
+          </div>
+          <div class="banter-meta"><span>${item.time} ✓✓</span></div>
+        </div>
+      `;
+    }
+
+    stageEl.innerHTML = `
+      <div class="banter-header">
+        <span class="banter-sender">${person.fullName}</span>
+        <span class="banter-badge ${person.bench ? 'bench' : ''}">${person.badge}</span>
+      </div>
+      <div class="banter-bubbles">${bubblesHtml}</div>
+    `;
+
+    if (item.poll) {
+      let votedIdx = null;
+      const optBtns = stageEl.querySelectorAll('.banter-poll-opt');
+      optBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.getAttribute('data-opt-idx'));
+          votedIdx = idx;
+          optBtns.forEach((b, k) => {
+            const baseVotes = item.poll.options[k].votes;
+            const newVotes = baseVotes + (k === votedIdx ? 1 : 0);
+            b.classList.toggle('voted', k === votedIdx);
+            b.querySelector('.banter-poll-votes').textContent = `${newVotes} הצבעות`;
+          });
+          showToast('ההצבעה נקלטה בוועדת הקלפי של רק הבנים!');
+        });
+      });
+    }
+  }
+
+  function showNext() {
+    const item = nextFromDeck(activeFilter);
+    renderStage(item);
+  }
+
+  nextBtn.addEventListener('click', showNext);
+
+  copyBtn.addEventListener('click', () => {
+    if (!currentItem) return;
+    const person = BANTER_CHARACTERS.find(c => c.id === currentItem.who) || BANTER_CHARACTERS[1];
+    const lines = [`💬 *מחולל ״רק הבנים״ (${person.fullName}):*`];
+    currentItem.bubbles.forEach(b => {
+      const txt = typeof b === 'object' ? b.text : b;
+      lines.push(`״${txt}״`);
+    });
+    if (currentItem.poll) {
+      lines.push(currentItem.poll.question);
+      currentItem.poll.options.forEach(o => lines.push(`▫️ ${o.label} (${o.votes})`));
+    }
+    lines.push('🇭🇺 https://festidan-bit.github.io/budapest-2026/#banter-section');
+    copyToClipboard(lines.join('\n'), 'הציטוט הועתק לוואטסאפ!');
+  });
+
+  renderChips();
+  showNext();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderItinerary();
+  initBanterGenerator();
   initConverter();
   initExpenseSplitter();
   initChecklist();
